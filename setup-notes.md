@@ -182,13 +182,13 @@ combinations that reflect the ways in which the system will be used._
 ```ruby
 # EXAMPLE
 
-# Display menu
-menu = Menu.new
-menu_item_1 = MenuItem.new("Fish Tacos", 4.99)
-menu_item_2 = MenuItem.new("Pulled Pork Burrito", 9.50)
-menu.add(menu_item_1)
-menu.add(menu_item_2)
-menu.show # => [menu_item_1, menu_item_2]
+# # Display menu
+# menu = Menu.new
+# menu_item_1 = MenuItem.new("Fish Tacos", 4.99)
+# menu_item_2 = MenuItem.new("Pulled Pork Burrito", 9.50)
+# menu.add(menu_item_1)
+# menu.add(menu_item_2)
+# menu.show # => [menu_item_1, menu_item_2]
 
 # Meal Choice - add item
 meal_choice = MealChoice.new
@@ -251,11 +251,11 @@ a more granular level of detail._
 ## SMSBuilder
 
 ### Menu
-# Add item to menu
-menu = Menu.new
-menu_item_1 = MenuItem.new(double :dish_name, :price)
-menu.add(menu_item_1)
-menu.menu_arr # => [Fish Tacos, 4.99]
+# # Add item to menu
+# menu = Menu.new
+# menu_item_1 = MenuItem.new(double :dish_name, :price)
+# menu.add(menu_item_1)
+# menu.menu_arr # => [Fish Tacos, 4.99]
 
 
 # Show menu
@@ -274,13 +274,13 @@ menu.show # =>
 
 
 ### MenuItem
-# Returns a menu item
-menu_item = MenuItem.new("Fish Tacos", 4.99)
-menu_item.dish_name # => "Fish Tacos"
+# # Returns a menu item
+# menu_item = MenuItem.new("Fish Tacos", 4.99)
+# menu_item.dish_name # => "Fish Tacos"
 
-# Returns a price
-menu_item = MenuItem.new("Fish Tacos", 4.99)
-menu_item.price # => 4.99
+# # Returns a price
+# menu_item = MenuItem.new("Fish Tacos", 4.99)
+# menu_item.price # => 4.99
 
 ### MealChoice
 # add dish to meal
