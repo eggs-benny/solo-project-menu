@@ -12,6 +12,7 @@ class MenuItem
   def price
     @price
   end
+end
 
 #   def hash
     
@@ -24,4 +25,3 @@ class MenuItem
 #   def rtn_hash
 #     @menu_item
 #   end
-end

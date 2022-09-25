@@ -40,7 +40,7 @@ class MealChoice
   end
 
   def itemise
-    p sum_header + format + "\nFinal Bill: £#{'%.2f' % (final_sum.to_f/100)}"
+    sum_header + format + "\nFinal Bill: £#{'%.2f' % (final_sum.to_f/100)}"
   end
 
   def confirm

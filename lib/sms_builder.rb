@@ -1,27 +1,29 @@
-class SMSBuilder
-  def initializer(time, mob_num)
-  end
+require 'date'
 
-  def time
-   # return time
+class SMSBuilder
+  def initialize(time, mob_num)
+    @time = time
+    @mob_num = mob_num
   end
 
   def mob_num
-   # return mob_num
+    @mob_num.delete(" ")
   end
   
-  def get_time(time)
-    # trawl from time API
+  def delivery_time(time)
+    # time = Time.new
+    time_plus_hour = time + 60*60
+    @time = time_plus_hour.strftime("%H:%M")
   end
 
-  def get_mobile_no(mob_num)
-    # gets number
-    # returns as string
-  end
+  # def get_mobile_no(mob_num)
+  #   # gets number
+  #   # returns as string
+  # end
 
   def format_sms
-    # combines time & mob_numb to "Thank you! Your order was placed and will be delivered before HH:MM"
-    # MUST HIDE NUMBERS
+    @time
+    return "Thank you! Your order was placed and will be delivered before #{@time}"
   end
 
   def send_sms
