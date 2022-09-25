@@ -1,6 +1,6 @@
 class MealChoice
-  def initialize(meal)
-    # meal is array
+  def initialize
+    @meal = []
   end
 
  ## def request_choice
@@ -9,38 +9,38 @@ class MealChoice
  ## end
 
   def add_dish(dish)
-    # push dish into array
-      ## ask user to confirm 
+    @meal << dish
   end
 
   def remove_dish(dish)
-    # delete dish from array
-      ## ask user to confirm 
+    @meal.delete(dish)
   end
 
-  def meal_summary
-    # returns array of meal so far
+  def summary
+    @meal
   end
 
-  def format_meal
-   # from meal_summary
-   # Returns a listed string in the form "dish_name": £"price"
+  def format
+    formatted_meal = @meal.map do
+      |dish| "#{dish.dish_name} --- £#{'%.2f' % (dish.price.to_f/100)}"
+    end
+    formatted_meal.join("\n")
   end
 
-  def add_header
-    # puts string 
+  def sum_header
+    return "Finalised order:\n"
   end
 
-  def final_price
-    # sums price of all selected items
+  def final_sum
+    sum = 0
+    @meal.each do |dish| 
+    sum += dish.price
+    end
+  sum
   end
 
   def itemise
-   # => confirm pushes here
-   # return a (formatted?) string of meals and prices
-   # also return final price
-   ## ask user to confirm selection
-   ## thank user
+    p sum_header + format + "\nFinal Bill: £#{'%.2f' % (final_sum.to_f/100)}"
   end
 
   def confirm

@@ -191,29 +191,29 @@ combinations that reflect the ways in which the system will be used._
 # menu.show # => [menu_item_1, menu_item_2]
 
 # Meal Choice - add item
-meal_choice = MealChoice.new
-menu = Menu.new
-menu_item_1 = MenuItem.new("Fish Tacos", 4.99)
-menu_item_2 = MenuItem.new("Pulled Pork Burrito", 9.50)
-menu_item_3 = MenuItem.new("Margs", 11.00)
-menu.add(menu_item_1)
-menu.add(menu_item_2)
-meal_choice.add_dish(menu_item_1)
-meal_choice.summary # => [["Fish Tacos", 4.99],["Pulled Pork Burrito", 9.50]]
+# meal_choice = MealChoice.new
+# menu = Menu.new
+# menu_item_1 = MenuItem.new("Fish Tacos", 4.99)
+# menu_item_2 = MenuItem.new("Pulled Pork Burrito", 9.50)
+# menu_item_3 = MenuItem.new("Margs", 11.00)
+# menu.add(menu_item_1)
+# menu.add(menu_item_2)
+# meal_choice.add_dish(menu_item_1)
+# meal_choice.summary # => [["Fish Tacos", 4.99],["Pulled Pork Burrito", 9.50]]
 # Add ask for confirmation...
 
-# Meal Choice - remove item
-meal_choice = MealChoice.new
-menu = Menu.new
-menu_item_1 = MenuItem.new("Fish Tacos", 4.99)
-menu_item_2 = MenuItem.new("Pulled Pork Burrito", 9.50)
-menu_item_3 = MenuItem.new("Margs", 11.00)
-menu.add(menu_item_1)
-menu.add(menu_item_2)
-meal_choice.add_dish(menu_item_1)
-meal_choice.add_dish(menu_item_2)
-meal_choice.remove_dish(menu_item_1)
-meal_choice.summary # => ["Pulled Pork Burrito", 9.50]
+# # Meal Choice - remove item
+# meal_choice = MealChoice.new
+# menu = Menu.new
+# menu_item_1 = MenuItem.new("Fish Tacos", 4.99)
+# menu_item_2 = MenuItem.new("Pulled Pork Burrito", 9.50)
+# menu_item_3 = MenuItem.new("Margs", 11.00)
+# menu.add(menu_item_1)
+# menu.add(menu_item_2)
+# meal_choice.add_dish(menu_item_1)
+# meal_choice.add_dish(menu_item_2)
+# meal_choice.remove_dish(menu_item_1)
+# meal_choice.summary # => ["Pulled Pork Burrito", 9.50]
 # Add ask for confirmation
 
 # Meal Choice - finalise
@@ -258,19 +258,17 @@ a more granular level of detail._
 # menu.menu_arr # => [Fish Tacos, 4.99]
 
 
-# Show menu
-menu = Menu.new
-menu_item_1 = MenuItem.new(double :dish_name_1, :price_1)
-menu_item_2 = MenuItem.new(double :dish_name_2, :price_2)
-menu_item_3 = MenuItem.new(double :dish_name_3, :price_3)
-menu.add(menu_item_1)
-menu.add(menu_item_2)
-menu.add(menu_item_3)
-menu.format_menu
-menu.show # =>
-## Fish Tacos: £4.99
-## Pulled Pork Burrito: £9.50
-## Margs: £11.00
+# # Show menu
+# menu = Menu.new
+# menu_item_1 = MenuItem.new(double :dish_name_1, :price_1)
+# menu_item_2 = MenuItem.new(double :dish_name_2, :price_2)
+# menu_item_3 = MenuItem.new(double :dish_name_3, :price_3)
+# menu.add(menu_item_1)
+# menu.add(menu_item_2)
+# menu.add(menu_item_3)
+# menu.format_menu
+# menu.show # =>
+
 
 
 ### MenuItem
@@ -282,56 +280,47 @@ menu.show # =>
 # menu_item = MenuItem.new("Fish Tacos", 4.99)
 # menu_item.price # => 4.99
 
-### MealChoice
-# add dish to meal
-meal_choice = MealChoice.new
-menu_item_1 = MenuItem.new(double :dish_name, :price)
-meal_choice.add_dish(menu_item_1) 
-meal_choice.summary # => [menu_item_1]
+# ### MealChoice
+# # add dish to meal
+# meal_choice = MealChoice.new
+# menu_item_1 = MenuItem.new(double :dish_name, :price)
+# meal_choice.add_dish(menu_item_1) 
+# meal_choice.summary # => [menu_item_1]
 
-# remove dish
-meal_choice = MealChoice.new
-menu_item_1 = MenuItem.new(double :dish_name, :price)
-menu_item_2 = MenuItem.new(double :dish_name, :price)
-meal_choice.add_dish(menu_item_1)
-meal_choice.add_dish(menu_item_2)
-meal_choice.remove_dish(menu_item_1)
-meal_choice.summary # => [menu_item_2]
+# # remove dish
+# meal_choice = MealChoice.new
+# menu_item_1 = MenuItem.new(double :dish_name, :price)
+# menu_item_2 = MenuItem.new(double :dish_name, :price)
+# meal_choice.add_dish(menu_item_1)
+# meal_choice.add_dish(menu_item_2)
+# meal_choice.remove_dish(menu_item_1)
+# meal_choice.summary # => [menu_item_2]
 
-# remove dish
-meal_choice = MealChoice.new
-menu_item_1 = MenuItem.new(double :dish_name, :price)
-menu_item_2 = MenuItem.new(double :dish_name, :price)
-meal_choice.add_dish(menu_item_1)
-meal_choice.add_dish(menu_item_2)
-meal_choice.remove_dish(menu_item_1)
-meal_choice.summary # => [menu_item_2]
-
-# format meal
-meal_choice = MealChoice.new
-menu_item_1 = MenuItem.new(double :dish_name, :price)
-menu_item_2 = MenuItem.new(double :dish_name, :price)
-meal_choice.add_dish(menu_item_1)
-meal_choice.add_dish(menu_item_2)
-meal_choice.format # => Returns 2x meals in a string in the form "dish_name": £"price"
+# # format meal
+# meal_choice = MealChoice.new
+# menu_item_1 = MenuItem.new(double :dish_name, :price)
+# menu_item_2 = MenuItem.new(double :dish_name, :price)
+# meal_choice.add_dish(menu_item_1)
+# meal_choice.add_dish(menu_item_2)
+# meal_choice.format # => Returns 2x meals in a string in the form "dish_name": £"price"
 
 # 
 
-# final price
-meal_choice = MealChoice.new
-menu_item_1 = MenuItem.new(double :dish_name, :price)
-menu_item_2 = MenuItem.new(double :dish_name, :price)
-meal_choice.add_dish(menu_item_1)
-meal_choice.add_dish(menu_item_2)
-meal_choice.final_price # => adds the two prices and returns a string "£ final_price"
+# # final price
+# meal_choice = MealChoice.new
+# menu_item_1 = MenuItem.new(double :dish_name, :price)
+# menu_item_2 = MenuItem.new(double :dish_name, :price)
+# meal_choice.add_dish(menu_item_1)
+# meal_choice.add_dish(menu_item_2)
+# meal_choice.final_price # => adds the two prices and returns an integer"
 
-# itemise
-meal_choice = MealChoice.new
-menu_item_1 = MenuItem.new(double :dish_name, :price)
-menu_item_2 = MenuItem.new(double :dish_name, :price)
-meal_choice.add_dish(menu_item_1)
-meal_choice.add_dish(menu_item_2)
-meal_choice.itemise # => puts the final itemised dishes, prices & total
+# # itemise
+# meal_choice = MealChoice.new
+# menu_item_1 = MenuItem.new(double :dish_name, :price)
+# menu_item_2 = MenuItem.new(double :dish_name, :price)
+# meal_choice.add_dish(menu_item_1)
+# meal_choice.add_dish(menu_item_2)
+# meal_choice.itemise # => puts the final itemised dishes, prices & total
 
 ### SMSBuilder
 #

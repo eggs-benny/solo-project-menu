@@ -1,42 +1,55 @@
 class Menu
   def initialize
     @menu = []
-    # @menu_str =  ""
     # @io = io
   end
-
+  
   def add(menu_item)
-    @menu << menu_item # menu_item is an instance of MenuItem
-    # MenuItem gets added to menu
-    # Returns nothing
+    @menu << menu_item
+    #  @menu.merge!(menu_item)
   end
 
   def menu_arr
-    @menu
+  @menu
   end
 
   def format_menu
-    # turns string of the form "dish_name": £"price"
+  formatted_menu = @menu.map do
+    |dish| "#{dish.dish_name} --- £#{'%.2f' % (dish.price.to_f/100)}"
   end
+  formatted_menu.join("\n")
+end
 
   def header
-    return "Welcome to Benchita's Tacquiera"
-    return "------------"
-    return "***MENU***"
-    return " "
+    return "Welcome to Benchita's Tacquiera\n-----------\n***MENU***\n"
   end
 
   def show_menu
-    @menu.join("\n")
-    @menu.each { |dish|
-      "#{dish.dish_name} --- £#{dish.price}"
-    }
-    @menu.join("\n")
-    # menu_str = ""
-    # @menu.each { |dish|
-      # menu_str << "#{dish.dish_name} --- £#{dish.price}"
-    # }
-    # menu_str
-    # Returns a formatted list inc header menu items (and prices)
+
+    return header + format_menu
   end
 end
+
+
+
+# {
+  #   "Fish Tacos": 4.99,
+  #   "Beef Tacos": 5.99,
+  #   "Jackfruit Tacos": 4.49,
+  #   "Pulled Pork Burrito": 9.50,
+  #   "Guac & Chips": 6,
+  #   "Margarita": 11.50,
+  #   "Guac Side": 1,
+  #   "Hot Sauce": 0.5
+  # }
+
+  # [
+  #   ["Fish Tacos", 4.99],
+  #   ["Beef Tacos", 5.99],
+  #   ["Jackfruit Tacos", 4.49],
+  #   ["Pulled Pork Burrito", 9.50],
+  #   ["Guac & Chips", 6],
+  #   ["Margarita", 11.50],
+  #   ["Guac Side", 1],
+  #   ["Hot Sauce", 0.5]
+  # ]
